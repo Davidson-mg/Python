@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %} <!--É um  pligin para edição de formularios vindos do form. Vale lembrar que para isso
+funcionar precisa ir no settings adicionar a variavel "CRISPY_TEMPLATE_PACK = 'uni_form'" e também adicionar
+'crispy_forms' dentro INSTALLED_APPS. Vamos utilizar no formulario da pagina-->
+
+
+{%block titulo%}  {{ post.titulo_post|title }} | {%endblock%}
+
+
+{%block conteudo%}
+
+<!-- POST -->
+
+    <div class="row pt-5">
+        <div class="col-xl"></div>
+        <div class="col-xl-8 text-center">
+            <h2>{{post.titulo_post}}</h2>
+            <br>
+            <h7>{{post.excerto_post|safe}}</h7>
+            <p class="text-muted mt-4">
+                <small>
+                    {{post.autor_post}} | {{ post.data_post }} | {{post.categoria_post}}
+                </small>
+            </p>
+        </div>
+        <div class="col-xl"></div>
+    </div>
+
+    <div class="row pt-5">
+        <div class="col-xl"></div>
+        <div class="col-xl-8">
+
+            {%if post.imagem_post%}
+            <img class="img-fluid pb-5 " src="{{post.imagem_post.url}}" alt="{{post.titulo_post}}">
+            {%endif%}
+            <br>
+
+            {{post.conteudo_post|safe}}
+
+            <!-- {{ post.conteudo_post }} -->
+
+
+        </div>
+        <div class="col-xl"></div>
+    </div>
+
+    {%if comentarios %}
+    <div class="row pt-5">
+        <div class="col-xl"></div>
+        <div class="col-xl-8">
+            <h2 class="my-3">Comentários</h2>
+
+            {%for comentario in comentarios %}
+            <h5 class="mb-2 mt-5">{{ comentario.nome_comentario }} disse: </h5>
+            <small class="text-muted">{{comentario.data_comentario}}</small>
+            <p class="mb-1">{{comentario.comentario}}</p>
+            {%endfor%}
+
+        </div>
+        <div class="col-xl"></div>
+    </div>
+    {%endif%}
+
+
+    <div class="row pt-5">
+        <div class="col-xl"></div>
+        <div class="col-xl-8">
+            <h2 class="my-3">Deixe um comentário</h2>
+
+            <form method="POST" action="#envia_comentario">
+                {% csrf_token %}
+
+                <!-- {{form}}--> <!--Imprimindo de forma direta nosso formulario, mas lembrando que dessa forma
+                    não conseguiriamos manipular o estilo dos elementos, por isso comentamos e abaixo vamos fazer
+                    de forma que possamos manipular os elementos do form-->
+
+                <!--Implementando uma forma que possibilita manipularmos os campos do form até mesmo estilizando-->
+                {% for hidden_field in form.hidden_fields %} <!-- Esse hidden_fileds será uma lista vazia e é
+                     uma variavel do form mesmo-->
+                {{ hidden_field }}
+                {%endfor%}
+
+                {% for visible_field in form.visible_fields %} <!-- Esse hidden_fileds será uma lista vazia -->
+
+                <!--Nessa forma de exibir os campos do form, precisa dessa variavel para mostrar os erros. Coloquei
+                 comentado pois vamos tulizar o plugin crispy para estilizar o formulario -->
+                <!--
+                <div class="form-group">
+                    {{visible_field.label_tag}} <br>
+                    {{ visible_field }}
+                    {{ visible_field.errors}}
+                </div>
+                -->
+
+                    {{ visible_field|as_crispy_field }} <!--substituindo o trecho comentado acima pois será aplicado
+                        o plug crispy para estilizar o formulario-->
+
+                {%endfor%}
+
+                {% include 'parciais/_messages.html' %}
+                <input id="envia_comentario" type="submit" class="btn btn-primary" value="Enviar">
+
+            </form>
+
+
+        </div>
+        <div class="col-xl"></div>
+    </div>
+
+
+
+<!-- POST -->
+
+
+{%endblock%}

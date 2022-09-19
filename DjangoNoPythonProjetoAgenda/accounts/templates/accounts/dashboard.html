@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{%block titulo%} Dashboard de {{user}} | {%endblock%} <!--Estamos definindo o titulo da pagina-->
+
+{%block conteudo%}
+<h1 class="mt-3 mb-e"> Olá {{ user.first_name }} {{ user.last_name }}</h1>
+<p>
+    O seu nome de usuário é {{ user }}
+</p>
+
+<div class="container">
+    <form action="{% url 'dashboard' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %} <!--Lembrando que em caso de enviar formularios no django precisa desse codigo-->
+        <table class="table">
+            {{ form }} <!-- A unica coisa que o Django não vai enviar neste caso é o botão enviar, por isso
+            vamos ser obrigados a cria-los no html -->
+            <tr> <!--Lembre-se que esse formulario será validado na função dashboard do arquivo views-->
+                <td colspan="2">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+{%endblock%}

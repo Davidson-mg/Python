@@ -1,0 +1,13 @@
+{% if messages %}
+  <br>
+  {% for messages in messages %}
+    <div class="alert {{ message.tags }}" role="alert">
+      <!-- Essa tb pegamos da internet neste link https://getbootstrap.com/docs/4.0/components/alerts/-->
+      <!-- Estamos pegando msg que vem do messages.add_message no arquivo views no metodo
+      do arquivo index -->
+      {{ messages }}
+
+    </div>
+
+  {% endfor %}
+{% endif %}

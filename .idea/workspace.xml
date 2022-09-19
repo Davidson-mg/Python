@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d052e7f0-07da-4151-a049-235b5fb9fabc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/blog/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/blog/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/blog/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/blog/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/blog/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/categorias/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/categorias/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/categorias/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/categorias/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/categorias/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/categorias/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/categorias/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/comentarios/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/comentarios/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/comentarios/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/comentarios/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/comentarios/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/comentarios/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/comentarios/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/posts/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/posts/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/posts/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/posts/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/posts/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/posts/templates/posts/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/posts/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/posts/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/posts/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/parciais/_footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/parciais/_head.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/parciais/_messages.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/parciais/_nav.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/parciais/_pagination.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/static/vendor/imagens/chip_circuit_processor_140251_1280x720.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/static/vendor/imagens/circuit_paths_chips_black_pin_26298_1280x720.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/static/vendor/imagens/fQnjSbW.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/static/vendor/imagens/keyboard_robot_bw_clone_lego_27558_1280x720.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/static/vendor/imagens/linux_debian_brand_logo_spiral_93908_1280x720.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/static/vendor/imagens/linux_linux_mint_black_gnu_103855_1280x720.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/static/vendor/imagens/linux_linux_mint_gnu_logo_texture_103848_1280x720.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/static/vendor/imagens/linux_system_hi-tech_73419_1280x720.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/static/vendor/imagens/processor_cpu_upgrade_installation_chip_robot_5633_1280x720.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/static/vendor/imagens/windows_field_grass_operating_system_74340_1280x720.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjetoBlog/templates/static/vendor/imagens/zenit_retro_camera_photos_map_107245_1280x720.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CursoPython.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CursoPython.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoNoPythonProjetoAgenda/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoNoPythonProjetoAgenda/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoNoPythonProjetoAgenda/templates/parciais/_messages.html" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoNoPythonProjetoAgenda/templates/parciais/_messages.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2DXHjMovMj5Nv68fkgAQm54fasD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/CursoPython/ProjetoBlog/templates/static",
+    "settings.editor.selected.configurable": "editor.preferences.webOptions"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\CursoPython\ProjetoBlog\templates\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\CursoPython\ProjetoBlog\templates\static\vendor" />
+      <recent name="C:\CursoPython\ProjetoBlog\templates\static" />
+      <recent name="C:\CursoPython\ProjetoBlog\templates\parciais" />
+      <recent name="C:\CursoPython\DjangoNoPythonProjetoAgenda\contatos\templates\contatos" />
+      <recent name="C:\CursoPython\DjangoNoPythonProjetoAgenda\contatos\templates\ver_contato.html" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.167CRUDcomPymysqlNoMySqlEMariaDbServer">
+    <configuration name="159IntegrandoJanelasDoQTdesignerComPyQT5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CursoPython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PyQT-InterfaceGraficaNoPython" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PyQT-InterfaceGraficaNoPython/159IntegrandoJanelasDoQTdesignerComPyQT5.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="161SqliteUsandoOModuloSqlite3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CursoPython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Base de dados com Python - SQlite, mySql e MariaDB" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Base de dados com Python - SQlite, mySql e MariaDB/161SqliteUsandoOModuloSqlite3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="164PythonSqlite3DbBrowserForSqLite" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CursoPython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Base de dados com Python - SQlite, mySql e MariaDB" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Base de dados com Python - SQlite, mySql e MariaDB/164PythonSqlite3DbBrowserForSqLite.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="167CRUDcomPymysqlNoMySqlEMariaDbServer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CursoPython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Base de dados com Python - SQlite, mySql e MariaDB" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Base de dados com Python - SQlite, mySql e MariaDB/167CRUDcomPymysqlNoMySqlEMariaDbServer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CursoPython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PyQT-InterfaceGraficaNoPython" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PyQT-InterfaceGraficaNoPython/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.167CRUDcomPymysqlNoMySqlEMariaDbServer" />
+        <item itemvalue="Python.164PythonSqlite3DbBrowserForSqLite" />
+        <item itemvalue="Python.159IntegrandoJanelasDoQTdesignerComPyQT5" />
+        <item itemvalue="Python.161SqliteUsandoOModuloSqlite3" />
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d052e7f0-07da-4151-a049-235b5fb9fabc" name="Default Changelist" comment="" />
+      <created>1660838642452</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660838642452</updated>
+      <workItem from="1661520975420" duration="11000" />
+      <workItem from="1661521003985" duration="7000" />
+      <workItem from="1661562239886" duration="10000" />
+      <workItem from="1661614339370" duration="358000" />
+      <workItem from="1662041148591" duration="89000" />
+      <workItem from="1662241906693" duration="9000" />
+      <workItem from="1662643909824" duration="5000" />
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/DjangonoPythonBasico/OlaMundo/OlaMundo/urls.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

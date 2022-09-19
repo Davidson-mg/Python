@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load humanize%} <!--#Estamos usando para dar uma humanizada nas datas, tipo, ao invez de aparecer só os
+    #numero, vai mostrar 'ontem', 'hoje', 'amanhã' e etc. Utilizamo no arquivo index no post.data_post. Foi necessario
+    também adicionar 'django.contrib.humanize', na variavel INSTALLED_APPS do arquivo settings-->
+
+{% load dafilters %} <!-- Estamos carregando o arquivo dafilters da pasta templatetags. Nesta pagina vamos usar o metodo
+que criamos 'plural_comentarios' que têm o obetivo apenas exibir 'comentario', 'comentarios', 'nenhum comentarios' e
+etc ao exibir a variavel 'numero_comentarios'-->
+
+{%block conteudo%}
+            <!-- CONTENT -->
+            <div class="card-columns mt-4">
+
+                {% for post in posts %}
+                <div class="card">
+
+                    {% if post.imagem_post %} <!--Alguns posts não possuem imagem e o que está dentro desse if é relacionado
+                    a mostrar a imagem. Se não têm imagem, da erro. Por isso, este trecho só vai aparecer se existir
+                    imagem-->
+                    <a href="{% url 'post_detalhes' post.id %}">
+                        <img class="card-img-top"
+                             src="{{ post.imagem_post.url }}"
+                             alt="{{ post.titulo_post }}">
+                    </a>
+                    {% endif %}
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{% url 'post_detalhes' post.id %}">
+                                {{ post.titulo_post }}
+                            </a>
+                        </h5>
+                        <p class="card-text">{{post.excerto_post|safe}}</p>
+                        <p class="card-text">
+                            <!--Esse naturalday vem lá de 'django.contrib.humanize', na variavel INSTALLED_APPS do
+                            arquivo settings. Serve para adicionar ontem, hoje e amanhã nas datas. O title serve para
+                            colocar a primeira letra de ontem, hoje e amanhã maiusculas-->
+                            <small class="text-muted">{{post.data_post|naturalday|title}}
+                                |
+                                <!--Essa variavel numero_comentarios não existe nos models. Se trata de uma
+                                variavel para contar o numero de comentarios. É como se fizessemos
+                                'post.comentario.set_count'. Essa variavel vem do arquivo views no metodo get_queryset
+                                na classe PostIndex-->
+                                {{ post.numero_comentarios|plural_comentarios }} <!-- plural_comentarios é uma variavel
+                                 que vem do arquivo dafilters dentro do diretorio templatetags e foi carregada pelo
+                                 {% load dafilters %}-->
+                                |
+                                {{ post.categoria_post }}</small>
+                        </p>
+
+                        <div class="text-right">
+                            <a href="{% url 'post_detalhes' post.id %}" class="btn btn-outline-secondary">Ler mais...</a>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+            <!--/CONTENT-->
+
+    {%include 'parciais/_pagination.html' %}
+
+{%endblock%}

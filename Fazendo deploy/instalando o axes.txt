@@ -1,0 +1,61 @@
+
+Para instalar precisa estar como venv: source venv/bin/activate
+pip install django-axes
+
+
+(dica: vc pode usar o comando 'pip list' para verificar se a aplicação realmente foi instalada)
+
+
+vai no arquivo settings do seu projeto e adicione "'axes'," em INSTALLED_APPS
+
+Exemplo:
+INSTALLED_APPS = [
+...
+...
+...
+'axes',
+]
+
+
+ainda no settings, crie a nova variavel abaixo:
+AUTHENTICATION_BACKENDS = [
+    # AxesStandaloneBackend should be the first backend in the AUTHENTICATION_BACKENDS list.
+    'axes.backends.AxesStandaloneBackend',
+
+    # Django ModelBackend is the default authentication backend.
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
+
+
+ainda no settings, adicione na variavel já existente MIDDLEWARE :
+MIDDLEWARE = [
+    ...
+    ...
+    ...
+    'axes.middleware.AxesMiddleware', #essa linha obrigatoriamente precisa ser a ultima, se não da erro
+]
+
+
+
+
+Digite o comando para checar se não há erros
+python manage.py check
+
+
+
+efetue um migrate
+python manage.py migrate
+
+
+
+
+Caso vc queira testar, depois de ser bloqueado, basta digitar o comando a baixo:
+python manage.py axes_reset
+
+
+
+Caso não aplique, tente reiniciar o nginx e o gunicorn
+sudo systemctl restart nginx
+sudo systemctl restart gunicorn

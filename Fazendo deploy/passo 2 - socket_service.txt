@@ -1,0 +1,102 @@
+deactivate
+
+## FONTE:
+## https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04
+
+# Criando o arquivo
+sudo nano /etc/systemd/system/gunicorn.socket
+##################################################
+
+# COLAR (SEM EDIÇÃO)
+[Unit]
+Description=gunicorn socket
+
+[Socket]
+ListenStream=/run/gunicorn.sock
+
+[Install]
+WantedBy=sockets.target
+##################################################
+
+# Criando outro arquivo
+sudo nano /etc/systemd/system/gunicorn.service
+##################################################
+
+# Editar, depois Colar
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=davidson
+Group=www-data
+WorkingDirectory=/home/davidson/projetoAgenda
+ExecStart=/home/davidson/projetoAgenda/venv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/gunicorn.sock \
+          projetoAgenda.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+##################################################
+
+# Ativando
+sudo systemctl start gunicorn.socket
+sudo systemctl enable gunicorn.socket
+##################################################
+
+# Checando
+sudo systemctl status gunicorn.socket
+sudo systemctl status gunicorn
+curl --unix-socket /run/gunicorn.sock localhost
+sudo systemctl status gunicorn
+
+###em caso de erro####
+sudo systemctl daemon-reload
+sudo systemctl restart gunicorn
+##################################################
+
+sudo nano /etc/nginx/sites-enabled/sitedjango
+##################################################
+
+# Configurando o nginx server block
+server {
+    listen 80;
+    server_name localhost;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    
+    location /static/ {
+        root /home/davidson/blog;
+    }
+
+    location /media {
+        alias /home/davidson/blog/media/;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+}
+
+##################################################
+
+sudo rm /etc/nginx/sites-enabled/default
+sudo systemctl restart nginx
+sudo systemctl restart gunicorn
+##################################################
+
+Vai no settings do projeto e coloca na variavel ALLOWED_HOSTS o ip ou dns do seu projeto
+
+
+
+#########################
+considere somente caso tenha problemas relacionados ao pillow
+
+sudo apt-get remove pillow
+pip install --upgrade pip setuptools wheel
+pip3 install Pillow
+############################

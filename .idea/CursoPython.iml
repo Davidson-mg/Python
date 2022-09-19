@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Python - Introducao a POO (classes)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Modulos Puython - os, datetime, sys, json, csv, selenium, pillow e mais" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/PyQT-InterfaceGraficaNoPython" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Base de dados com Python - SQlite, mySql e MariaDB" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DjangonoPythonBasico/DjangoOlaMundo" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProjetoBlog" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

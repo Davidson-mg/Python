@@ -1,0 +1,6 @@
+<!-- Esse arquivo de busca precisa ser uma copia da pagina onde temos o campod e busca,
+neste caso, a pagina index -->
+
+{% extends 'contatos/index.html' %}
+
+{%block titulo%}{{request.GET.termo}} Busca | {%endblock%} <!--Estamos definindo o titulo da pagina-->
