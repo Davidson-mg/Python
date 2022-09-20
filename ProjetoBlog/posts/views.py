@@ -1,12 +1,11 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.list import ListView, View
-=======
-from django.shortcuts import render
-from django.views.generic.list import ListView
->>>>>>> parent of 87d38ef (finalizando blog)
 from django.views.generic.edit import UpdateView
 from .models import Post
+from django.db.models import Q, Count, Case, When
+from comentarios.forms import FormComentario #Classe FormComentario do arquivo forms do app comentarios
+from comentarios.forms import Comentario
+from django.contrib import messages
 
 class PostIndex(ListView): #repare que estamos herdando da classe importada ListView e a classe abaixo herda da nossa
     #casse PostIndex. Essa classe já implementa pra gente algumas coisas relacionadas a lista de objetos
@@ -15,7 +14,7 @@ class PostIndex(ListView): #repare que estamos herdando da classe importada List
     paginate_by = 3
     context_object_name = 'posts'
 
-<<<<<<< HEAD
+
     def get_queryset(self):
         qs = super().get_queryset() #estamos pegando da nossa classe pai (ListView) com o super, o metodo get_queryset
         #que está relacionado aos obj, neste caso, aos posts
@@ -38,15 +37,12 @@ class PostIndex(ListView): #repare que estamos herdando da classe importada List
 
         return qs
 
-=======
->>>>>>> parent of 87d38ef (finalizando blog)
+
 class PostBusca(PostIndex):
     pass
 
 class PostCategoria(PostIndex):
     pass
-
-<<<<<<< HEAD
 
 class PostDetalhes(View):
     template_name = 'posts/post_detalhes.html'
@@ -158,8 +154,8 @@ class PostDetalhes(View):
 #         comentario.save()
 #         messages.success(self.request,'Comentário enviado com sucesso.')
 #         return redirect('post_detalhes', pk=post.id) #estamos recarregando a mesma pagina do post atual
-=======
+
 class PostDetalhes(UpdateView): #Repare que essa classe é a unica que não herda das classe anteriores, herdando da
     #classe importada UpdateView
     pass
->>>>>>> parent of 87d38ef (finalizando blog)
+

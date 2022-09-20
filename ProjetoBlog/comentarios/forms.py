@@ -22,7 +22,7 @@ class FormComentario(ModelForm):
             data={ #Os dados que serão postados. Um dicionario com a SEGUNDA CHAVE (COPIAR CHAVE SECRETA) que foi gerada
             #quando criamos o recapetcha no Google e também a resposta, que ai é a primeira chave que recebemos de
             #recaptcha_response e está na nossa div dentro forma em data-sitekey
-                'secret':'jqpjqwpojwpojqwefqwqe', #essa chave está errada por conta dos commits ao
+                'secret':'6LetSg0iAAAAAFo30Z_ustPC2layPoj3wUtHdZwI', #essa chave está errada por conta dos commits ao
                 #github. Sempre que quiser rodar este projeto precisa copiar a chave corre pra não da problema
                 'response': recaptcha_response #
             }
