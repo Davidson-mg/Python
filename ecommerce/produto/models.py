@@ -4,15 +4,19 @@ from django.db import models
 from PIL import Image
 import os
 from django.conf import settings
+from django.utils.text import slugify
 
 class Produto(models.Model):
     nome = models.CharField(max_length=255)
     descricao_curta = models.TextField(max_length=255)
-    descricao_longa = models.TextField
+    descricao_longa = models.TextField()
     imagem = models.ImageField(upload_to='produto_imagens/%Y/%m', blank=True, null=True)
-    slug = models.SlugField(unique=True)
-    preco_marketing = models.FloatField()
-    preco_marketing_promocional = models.FloatField(default=0)
+    slug = models.SlugField(unique=True, blank=True, null=True) #slug é um tipo de url. Digamos que eu tenha um produto
+    # camiseta com o nome "camiseta preta é legal", no slug ficaria parecido com "camiseta-preta-e-legal-123"
+    # (o numero seria por ex o id)
+
+    preco_marketing = models.FloatField(verbose_name='Preço')
+    preco_marketing_promocional = models.FloatField(default=0, verbose_name='Preço Promo')
     
     tipo = models.CharField( #Neste caso, vai ser um atributo charfield, porém com opção de escolha. Será parecido com o
         # enum de banco de dados
@@ -20,10 +24,23 @@ class Produto(models.Model):
         max_length=1, #terá tamanho de 1. Pois, apesar de que vamos escolher entre Variação e Simples, ele vai armazenar
         # 'V' ou 'S'
         choices=( #quais serão as escolhas
-            ('V', 'Variação'), #se escolher essa variavel, ele manda um 'V'
+            ('V', 'Variavel'), #se escolher essa variavel, ele manda um 'V'
             ('S', 'Simples'), #se eu escolher simples, ele manda um simples
         )
     )  
+
+    def get_preco_formatado(self): #metodo para formatar o valores de preco, colocando o R$, substituindo '.' por ','
+        #e permitindo apenas duas casas decimais. No arquivo de admin, em list_display, onde vc colocaria o atributo
+        #preco_marketing, vc coloca agora o metodo get_preco_formatado
+        return f'R$ {self.preco_marketing:.2f}'.replace('.', ',')
+    get_preco_formatado.short_description = 'Preço' #Sem isso nos campos da variavel preco_marketing, apareceria o nome
+    #do metodo get_preco_formatado. Dessa forma, vai aparecer 'preço'
+
+    def get_preco_promocional(self):
+        return f'R$ {self.preco_marketing_promocional:.2f}'.replace('.', ',')
+    get_preco_promocional.short_description = 'Preço promocional'
+
+
 
 
     #o metodo abaixo é para redimensionar a img. Como ele é grande e pode ser usado em outro lugar
@@ -67,6 +84,17 @@ class Produto(models.Model):
         new_image.close()
 
     def save(self, *args, **kwargs): #esse metodo é generico do django e estamos sobrescrevendo ele.
+
+        # slug é um tipo de url. Digamos que eu tenha um produto
+        # camiseta com o nome "camiseta preta é legal", no slug ficaria parecido com "camiseta-preta-e-legal-123"
+        # (o numero seria por ex o id)
+
+        if not self.slug: #O atributo slug não é obrigatorio o usuario preencher, porém, quando fazio, vamos preecher
+            #automaticamente usando o metodo slugify do import slugify. Esse metodo edita automaticamente a string
+            #passada como parametro de forma que ela tenha a aparencia de um slug.
+            slug = f'{slugify(self.nome)}'
+            self.slug = slug
+
         super().save(*args, **kwargs)#Antes de sobrescrever um metodo, precisamos chama-lo para não perder
         #o que já existe nele. Até este ponto, não alteramos nada neste metodo
 
@@ -78,7 +106,6 @@ class Produto(models.Model):
 
     def __str__ (self):
         return self.nome
-
 
 
 
