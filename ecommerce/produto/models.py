@@ -5,6 +5,7 @@ from PIL import Image
 import os
 from django.conf import settings
 from django.utils.text import slugify
+from utils import utils
 
 class Produto(models.Model):
     nome = models.CharField(max_length=255)
@@ -32,13 +33,21 @@ class Produto(models.Model):
     def get_preco_formatado(self): #metodo para formatar o valores de preco, colocando o R$, substituindo '.' por ','
         #e permitindo apenas duas casas decimais. No arquivo de admin, em list_display, onde vc colocaria o atributo
         #preco_marketing, vc coloca agora o metodo get_preco_formatado
-        return f'R$ {self.preco_marketing:.2f}'.replace('.', ',')
+
+        return utils.formata_preco(self.preco_marketing) ##Repare que ao inves de escrever aqui a função, nós estamos
+        # chamando a função que foi escrita no arquivo utils dentro da pasta utils. Isso pq vamos reutilizar essa função
+        # outras vezes e não queremos ficar rescrevendo ela varias vezes. Então, reescrevemos ela e a chamamos sempre
+        #que precisamos
+
     get_preco_formatado.short_description = 'Preço' #Sem isso nos campos da variavel preco_marketing, apareceria o nome
     #do metodo get_preco_formatado. Dessa forma, vai aparecer 'preço'
 
-    def get_preco_promocional(self):
-        return f'R$ {self.preco_marketing_promocional:.2f}'.replace('.', ',')
+
+
+    def get_preco_promocional(self): #feito aqui o mesmo que foi feito acima em get_preco_formatado
+        return utils.formata_preco(self.preco_marketing_promocional)
     get_preco_promocional.short_description = 'Preço promocional'
+
 
 
 
@@ -89,7 +98,7 @@ class Produto(models.Model):
         # camiseta com o nome "camiseta preta é legal", no slug ficaria parecido com "camiseta-preta-e-legal-123"
         # (o numero seria por ex o id)
 
-        if not self.slug: #O atributo slug não é obrigatorio o usuario preencher, porém, quando fazio, vamos preecher
+        if not self.slug: #O atributo slug não é obrigatorio o usuario preencher, porém, quando vazio, vamos preecher
             #automaticamente usando o metodo slugify do import slugify. Esse metodo edita automaticamente a string
             #passada como parametro de forma que ela tenha a aparencia de um slug.
             slug = f'{slugify(self.nome)}'
@@ -98,7 +107,7 @@ class Produto(models.Model):
         super().save(*args, **kwargs)#Antes de sobrescrever um metodo, precisamos chama-lo para não perder
         #o que já existe nele. Até este ponto, não alteramos nada neste metodo
 
-        max_image_size = 800 #variavel com o tamanho de img que queremos
+        max_image_size = 800 #variavel com o tamanho da img que queremos
 
         if self.imagem: #Estamos verificando se a imagem foi enviada lá na tela de admin no produto
             self.resize_image(self.imagem, max_image_size) #se ela foi enviada, chama o metodo acima resize_image
