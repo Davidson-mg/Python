@@ -1,5 +1,5 @@
 (function () {
-    select_variacao = document.getElementById('select-variacoes');
+    select_variacao = document.getElementById('select-variacoes'); //Armazenando o elementos dos ids select-variacoes
     variation_preco = document.getElementById('variation-preco');
     variation_preco_promocional = document.getElementById('variation-preco-promocional');
 

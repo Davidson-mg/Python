@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load omfilters %}
+{% load dafilters %}
 
 
 {%block conteudo%}
@@ -31,7 +31,7 @@
                                 o metodo para formatar precos que criamos manualmente no arquivo 'omfilters' na pasta
                                 'templatestag'. Vai simplesmente formatar os valores de preco, colocando o R$,
                                 substituindo '.' por ',' e permitindo apenas duas casas decimais. Lembrando que
-                                para que fosse possivel chamar esta função, tivemos qur dar um {%load omfilters%}
+                                para que fosse possivel chamar esta função, tivemos qur dar um {%load dafilters%}
                                 no topo deste arquivo html-->
 
                             </span>

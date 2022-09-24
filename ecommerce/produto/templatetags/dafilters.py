@@ -18,3 +18,22 @@ def formata_preco (val):  #metodo para formatar o valores de preco, colocando o 
     return utils.formata_preco(val) #Repare que ao inves de escrever aqui a função, nós estamos chamando a função que foi
     #escrita no arquivo utils dentro da pasta utils. Isso pq vamos reutilizar essa função outras vezes e não
     #queremos ficar rescrevendo ela varias vezes
+
+
+
+@register.filter
+def cart_total_qtd(carrinho): #Estamos recebendo o carrinho completo, com todos o seus atributos
+
+    return utils.cart_total_qtd(carrinho) #Repare que ao inves de escrever aqui a função, nós estamos chamando a função que
+    # foi escrita no arquivo utils dentro da pasta utils. Isso pq vamos reutilizar essa função outras vezes e não
+    #queremos ficar rescrevendo ela varias vezes
+
+
+
+@register.filter
+def cart_totals(carrinho):  #Essa função vai somar os valores de todos o itens no carrinho, considerando os valores
+    #normais, em promoção e etc. Essa função vai ser chamada em produto/templatestags/dafilters.py
+
+    return utils.cart_totals(carrinho)#Repare que ao inves de escrever aqui a função, nós estamos chamando a função que
+    # foi escrita no arquivo utils dentro da pasta utils. Isso pq vamos reutilizar essa função outras vezes e não
+    #queremos ficar rescrevendo ela varias vezes
