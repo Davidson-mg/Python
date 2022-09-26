@@ -19,20 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d052e7f0-07da-4151-a049-235b5fb9fabc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetoBlog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetoBlog/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetoBlog/posts/templates/posts/post_detalhes.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetoBlog/posts/templates/posts/post_detalhes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetoBlog/posts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetoBlog/posts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python - Introducao a POO (classes)/113HerancaMultiplaPythonPoo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python - Introducao a POO (classes)/113HerancaMultiplaPythonPoo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python - Introducao a POO (classes)/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/Python - Introducao a POO (classes)/log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/loja/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/loja/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/perfil/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/perfil/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/perfil/templates/perfil/criar.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/perfil/templates/perfil/criar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/perfil/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/perfil/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/teste.py" afterDir="false" />
-    </list>
+    <list default="true" id="d052e7f0-07da-4151-a049-235b5fb9fabc" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,16 +45,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/CursoPython&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.webOptions&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/CursoPython/ecommerce",
+    "settings.editor.selected.configurable": "editor.preferences.webOptions"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\CursoPython\ProjetoBlog\templates\static" />

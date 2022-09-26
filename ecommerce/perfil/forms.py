@@ -33,6 +33,12 @@ class UserForm(forms.ModelForm):
     #Existe duas formas de fazer essa checagem. A primeira é esperar o usuario enviar o formulario com e-mail e usuario
     #e simplesmente checar se já existem na base de dados. Outra forma é atualizar
     #Aqui vamos optar pela forma de atualizar
+    #Em nosso projeto, teremos uma unica tela para login e para cadastro/atualizar cadastro. Se o usuario estiver logado
+    #A tela de login fica a esquerda e a de cadastro/atualizar fica a direita.
+    #Se o cadastro do cliente já existe, ele consegue atualizar algum informação de seu cadastro no formulario
+    #a direita. Além disso, se o cadastro já existe, ele não é obrigado a preencher nova senha
+
+
 
     #Se o usuario estiver logado, vamos pegar os dados desse usuario logado
     def __init__(self, usuario=None, *args, **kwargs): #isso não existe no django, nós que estamos criando. Se trata
@@ -70,6 +76,14 @@ class UserForm(forms.ModelForm):
         error_msg_email_exists = 'E-mail já existe'
         error_msg_password_match = 'As duas senha não conferem'
         error_msg_password_short = 'Sua senha precisa de pelo menos 6 caracteres'
+        erro_msg_required_field = 'Este campo é obrigatorio.'
+
+
+        # Em nosso projeto, teremos uma unica tela para login e para cadastro/atualizar cadastro. Se o usuario estiver logado
+        # A tela de login fica a esquerda e a de cadastro/atualizar fica a direita.
+        # Se o cadastro do cliente já existe, ele consegue atualizar algum informação de seu cadastro no formulario
+        # a direita. Além disso, se o cadastro já existe, ele não é obrigado a preencher nova senha
+
 
         #usuario logados: atualização
         if self.usuario:
@@ -95,9 +109,30 @@ class UserForm(forms.ModelForm):
                     validation_error_msgs['password'] = error_msg_password_short
 
 
-            #usuarios não logados: cadastro
+        #usuarios não logados: cadastro
         else:
-            validation_error_msgs['username'] = 'Errouuuuuuuuuu'
+            if usuario_db:  # se usuario digitado pelo usuario for diferente do usuario selecionado
+                # na base de dados
+                validation_error_msgs['username'] = error_msg_user_exists  # Armazenando um erro relacionado ao
+            # usuario com a msg armazenada na variavel error_msg_user_exists
+
+            if email_db:  # Verificando se o e-mail foi enviado
+                validation_error_msgs['email'] = error_msg_email_exists
+
+            if not password_data:
+                validation_error_msgs['password'] = erro_msg_required_field
+
+            if not password2_data:
+                validation_error_msgs['password2'] = erro_msg_required_field
+
+            if password_data != password2_data:  # verificando se a senha 1 é igual a senha 2
+                validation_error_msgs['password'] = error_msg_password_match
+                validation_error_msgs['password2'] = error_msg_password_match
+
+            if len(password_data) < 6:  # verificano se a senha digitada é menor que 6 caracteres
+                validation_error_msgs['password'] = error_msg_password_short
+
+
 
         if validation_error_msgs:
             raise (forms.ValidationError(validation_error_msgs))

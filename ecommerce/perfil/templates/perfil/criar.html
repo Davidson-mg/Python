@@ -6,15 +6,25 @@ funcionar precisa ir no settings adicionar a variavel "CRISPY_TEMPLATE_PACK = 'b
 {% block conteudo %}
 
 <div class="row">
+
+    {% if not request.user.is_authenticated %} <!--Verificando se estemos autenticados-->
     <div class="col-lg">
         <h1>Login</h1>
     </div>
+    {%endif%}
+
     <div class="col-lg">
+
+        {% block titulocadastro%}
         <h1>Cadastro</h1>
+        {%endblock%}
 
         <form method="POST" action="">
             {% csrf_token %}
+            <h4>USÚARIO</h4>
             {{ userform|crispy}}
+            <h4>PERFIL</h4>
+            {{ perfilform|crispy }}
             <div class="row">
                 <div class="col">
                     <button type="submit" class="btn btn-primary btn-block btn-lg">
