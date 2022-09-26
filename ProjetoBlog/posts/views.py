@@ -67,7 +67,7 @@ class PostDetalhes(View):
 
             #'post': Post.objects.get(pk = pk), Essa linha faz o mesmo que a linha get_object_or_404 acima da variavel
             # contexto e posteriormente utilizada abaixo em 'post'. Colocamos fora da variavel contexto para poder ser
-            # reutilizada pelos demais elementos, por exemplo em comentarios. A a diferença é que com get_object_or_404
+            # reutilizada pelos demais elementos, por exemplo em comentarios. A diferença é que com get_object_or_404
             # nós acrescentamos o recurso de erro, descartando a nessecidade de um try. Por isso comentamos aqui.
             # O get_object_or_404 é melhor quando se trata de um unico obj
 

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags%} <!--É um  plugin para edição de formularios vindos do form. Vale lembrar que para isso
+funcionar precisa ir no settings adicionar a variavel "CRISPY_TEMPLATE_PACK = 'bootstrap4'" e também adicionar
+'crispy_forms' dentro INSTALLED_APPS. Vamos utilizar no formulario da pagina-->
+
+{% block conteudo %}
+
+<div class="row">
+    <div class="col-lg">
+        <h1>Login</h1>
+    </div>
+    <div class="col-lg">
+        <h1>Cadastro</h1>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ userform|crispy}}
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">
+                        Enviar
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+{%endblock%}
+

@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5e573d-7231-499b-923d-0444f77c11bc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../projeto-ecommerce/.idea/projeto-ecommerce.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ecommerce/produto/templates/produto/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/produto/templates/produto/lista.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ecommerce/produto/templatetags/omfilters.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/produto/templatetags/dafilters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ecommerce/produto/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/produto/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ecommerce/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ecommerce/templates/parciais/_nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/templates/parciais/_nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ecommerce/templates/static/assets/custom/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/templates/static/assets/custom/js/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ecommerce/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/utils/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/templates/posts/post_detalhes.html" beforeDir="false" afterPath="$PROJECT_DIR$/posts/templates/posts/post_detalhes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ecommerce/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ecommerce/loja/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/loja/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ecommerce/perfil/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/perfil/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ecommerce/perfil/templates/perfil/criar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/perfil/templates/perfil/criar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ecommerce/perfil/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/perfil/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +42,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/CursoPython/DjangoNoPythonProjetoAgenda",
+    "last_opened_file_path": "C:/CursoPython",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>

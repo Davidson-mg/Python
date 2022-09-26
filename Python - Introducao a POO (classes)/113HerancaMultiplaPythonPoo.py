@@ -24,6 +24,8 @@ class D(B, C): #herda tudo das classes B e C. Neste caso, considerando que vc te
 
 d = D()
 d.falar() #Vai imprimir: 'Falando... Estou em B'
+c = C()
+c.falar()
 
 print()
 print('---------------------------------------------')

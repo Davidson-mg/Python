@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'produto',
     'pedido',
     'perfil',
+    'crispy_forms',
 
     #TODO: remover debug toobar
     "debug_toolbar",
@@ -157,6 +158,7 @@ MESSAGE_TAGS = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Sessão em dias: 60s * 60m * 24h * 1d
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 7
