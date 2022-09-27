@@ -92,6 +92,10 @@ class Criar (BasePerfil):
     def post(self, *args, **kwargs):
         # if not self.userform.is_valid() or not self.perfilform.is_valid(): #se o formulario de perfil e de usuario não
         if not self.userform.is_valid(): #se o formulario de perfil e de usuario não
+            messages.error(
+                self.request, 'Existem erros nos formulario. Por gentileza, verifique todos os campos.'
+            )
+
             return self.renderizar
 
         #pegando usuario, senha e email do formulario de usuario
@@ -110,8 +114,8 @@ class Criar (BasePerfil):
                 usuario.set_password(password)
 
             usuario.email = email
-            usuario.first_name = email
-            usuario.last_name = email
+            usuario.first_name = first_name
+            usuario.last_name = last_name
             usuario.save()
 
             if not self.perfil: #Quando o cliente digitar os dados de perfil, vamos verificar se esse perfil já existe
@@ -153,8 +157,9 @@ class Criar (BasePerfil):
         self.request.session.save()
 
         messages.success(self.request, 'Seu cadastro foi criado ou atualizado com sucesso.')
+        messages.success(self.request, 'LOGIN EFETUADO!')
 
-        return redirect('perfil:criar')
+        return redirect('produto:carrinho')
         return self.renderizar
 
 

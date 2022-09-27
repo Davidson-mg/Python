@@ -38,9 +38,9 @@ funcionar precisa ir no settings adicionar a variavel "CRISPY_TEMPLATE_PACK = 'b
 
         <form method="POST" action="">
             {% csrf_token %}
-            <h4>USÚARIO</h4>
+            <h4>DADOS DE USÚARIO</h4>
             {{ userform|crispy}}
-            <h4>PERFIL</h4>
+            <h4>DADOS DE PERFIL</h4>
             {{ perfilform|crispy }}
             <div class="row">
                 <div class="col">
