@@ -8,15 +8,32 @@ funcionar precisa ir no settings adicionar a variavel "CRISPY_TEMPLATE_PACK = 'b
 <div class="row">
 
     {% if not request.user.is_authenticated %} <!--Verificando se estemos autenticados-->
-    <div class="col-lg">
+    <div class="col-lg mt-3">
         <h1>Login</h1>
+        <p>Se você já possui cadastro, basta logar abaixo</p>
+
+        <form method="post" action="{% url 'perfil:login' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="InputUsuario1">Usuário</label>
+                <input type="text" name="username" class="form-control" id="InputUsuario1" aria-describedby="usuarioHelp"
+                       placeholder="Digite seu usuário">
+            </div>
+            <div class="form-group">
+                <label for="InputSenha1">Senha</label>
+                <input type="password" name="password" class="form-control" id="InputSenha1" placeholder="Digite sua senha">
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+
     </div>
     {%endif%}
 
-    <div class="col-lg">
+    <div class="col-lg mt-3">
 
         {% block titulocadastro%}
         <h1>Cadastro</h1>
+        <p>Caso ainda não tenha cadastro, utilize o formulário abaixo para se cadastrar</p>
         {%endblock%}
 
         <form method="POST" action="">
