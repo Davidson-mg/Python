@@ -43,10 +43,6 @@ INSTALLED_APPS = [
     'pedido',
     'perfil',
     'crispy_forms',
-
-    #TODO: remover debug toobar
-    "debug_toolbar",
-
 ]
 
 MIDDLEWARE = [
@@ -57,10 +53,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-
-    #TODO: remover debug toobar
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'loja.urls'
@@ -174,10 +166,3 @@ SESSION_SAVE_EVERY_REQUEST = False
 # SESSION_FILE_PATH = '/home/luizotavio/Desktop/temp'
 
 
-
-#TODO: remover debug toobar
-INTERNAL_IPS = [
-    # ...
-    "127.0.0.1",
-    # ...
-]

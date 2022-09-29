@@ -23,6 +23,8 @@ class ListaProdutos(ListView):
     paginate_by = 10 #definindo a qtd de produtos por pagina. Lembrando que paginate_by é uma variavel generica do django
     #e define pra gente essa questão de elementos por pagina automaticamente
 
+    ordering = ['-id'] #ordenando de forma decrescente
+
 
 
 
@@ -65,7 +67,7 @@ class AdicionarAoCarrinho(View):
         http_referer = self.request.META.get('HTTP_REFERER', reverse('produto:lista')) #Toda essa linha depois do igual,
         # e referente a url anterior e vamos armazela-lo na variavel http_referer. Quando eu clicar no adicionar ao
         # carrinho, por meio dele nós vamos fazer o precesso de o produto recarregando a tela atual, sem carregar outra
-        # pagina. Precisa dos imports redirect e reverse. Esse rever serve para caso a agente tente adicionar um
+        # pagina. Precisa dos imports redirect e reverse. Esse reverse serve para caso a agente tente adicionar um
         #produto que não existe, digamos que digitando um vid inexistente na url, ele volta pra tela de produto
         # (produto:lista)
 

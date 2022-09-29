@@ -1,0 +1,12 @@
+python manage.py makemigrations
+Quando vc inserir um novo atributo no BD depois de já ter povoada, por aparecer essa msg
+
+
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this colum
+n)
+ 2) Quit and manually define a default value in models.py.
+
+Vc digita 1 e da enter. Logo em seguida, vai continuar o campo pra vc digitar algo. Digite 0 e dê
+enter. Pronto, vai sair do comando e basta dar um migrate
+
+python manage.py migrate

@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
-{% load dafilters %}
+{% load dafilters %} <!-- dafilters é um arquivo que criamos manualmente na pasta templatetags. Contem algumas funções
+como por exemplo, função que formata os valores em reais -->
 
+{% block titulo %} Produtos |  {% endblock %}
 
 {%block conteudo%}
 
@@ -28,7 +30,7 @@
                         {% if produto.preco_marketing_promocional %}
                             <span class="product-price">
                                 {{produto.preco_marketing_promocional|formata_preco }} <!--Esse '|formata_preco' chama
-                                o metodo para formatar precos que criamos manualmente no arquivo 'omfilters' na pasta
+                                o metodo para formatar precos que criamos manualmente no arquivo 'dafilters' na pasta
                                 'templatestag'. Vai simplesmente formatar os valores de preco, colocando o R$,
                                 substituindo '.' por ',' e permitindo apenas duas casas decimais. Lembrando que
                                 para que fosse possivel chamar esta função, tivemos qur dar um {%load dafilters%}

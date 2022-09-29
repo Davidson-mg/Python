@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
-{% load dafilters %}
+{% load dafilters %} <!-- dafilters é um arquivo que criamos manualmente na pasta templatetags. Contem algumas funções
+como por exemplo, função que formata os valores em reais -->
+
+{% block titulo %} {{ produto.nome }} | {% endblock %}
 
 {% block conteudo %}
 

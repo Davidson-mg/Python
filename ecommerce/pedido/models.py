@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 class Pedido(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE) #estamos criando uma relação com o usuario do django
     total = models.FloatField()
+    qtd_total = models.PositiveIntegerField()
 
     status = models.CharField(#Neste caso, vai ser um atributo charfield, porém com opção de escolha. Será parecido com o
         # enum de banco de dados
