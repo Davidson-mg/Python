@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags%} <!--É um  plugin para edição de formularios vindos do form. Vale lembrar que para isso
+funcionar precisa ir no settings adicionar a variavel "CRISPY_TEMPLATE_PACK = 'bootstrap4'" e também adicionar
+'crispy_forms' dentro INSTALLED_APPS. Vamos utilizar no formulario da pagina-->
+
+{% block titulo %} Criar Perfil | {% endblock %}
+
+{% block conteudo %}
+
+<div class="row">
+
+    {% if not request.user.is_authenticated %} <!--Verificando se estemos autenticados-->
+    <div class="col-lg mt-3">
+        <h1>Login</h1>
+        <p>Se você já possui cadastro, basta logar abaixo</p>
+
+        <form method="post" action="{% url 'perfil:login' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="InputUsuario1">Usuário</label>
+                <input type="text" name="username" class="form-control" id="InputUsuario1" aria-describedby="usuarioHelp"
+                       placeholder="Digite seu usuário">
+            </div>
+            <div class="form-group">
+                <label for="InputSenha1">Senha</label>
+                <input type="password" name="password" class="form-control" id="InputSenha1" placeholder="Digite sua senha">
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+
+    </div>
+    {%endif%}
+
+    <div class="col-lg mt-3">
+
+        {% block titulocadastro%}
+        <h1>Cadastro</h1>
+        <p>Caso ainda não tenha cadastro, utilize o formulário abaixo para se cadastrar</p>
+        {%endblock%}
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <h4>DADOS DE USÚARIO</h4>
+            {{ userform|crispy}}
+            <h4>DADOS DE PERFIL</h4>
+            {{ perfilform|crispy }}
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">
+                        Enviar
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+{%endblock%}
+

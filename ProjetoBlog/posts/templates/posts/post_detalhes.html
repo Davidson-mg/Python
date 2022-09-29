@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
-{% load crispy_forms_tags %} <!--É um  plugin para edição de formularios vindos do form. Vale lembrar que para isso
-funcionar precisa ir no settings adicionar a variavel "CRISPY_TEMPLATE_PACK = 'bootstrap4'" e também adicionar
+{% load crispy_forms_tags %} <!--É um  pligin para edição de formularios vindos do form. Vale lembrar que para isso
+funcionar precisa ir no settings adicionar a variavel "CRISPY_TEMPLATE_PACK = 'uni_form'" e também adicionar
 'crispy_forms' dentro INSTALLED_APPS. Vamos utilizar no formulario da pagina-->
 
 
@@ -97,14 +97,6 @@ funcionar precisa ir no settings adicionar a variavel "CRISPY_TEMPLATE_PACK = 'b
                         o plug crispy para estilizar o formulario-->
 
                 {%endfor%}
-
-                <!--lembrando que essa div abaixo têm relação com o recaptcha do google. Quando enviarmos um formulario
-                de comentario, vai enviar junto este codigo em data-sitekey, que por sua vez nós geramos no google
-                ao criamos o recaptcha. Veja o tutorial em word 'preparando o ambiente para criar o recaptcha do google'-->
-                <div class="g-recaptcha" data-sitekey="6LetSg0iAAAAAOQk8uTKwpfOx4-sZvIkKGf0wf1x"></div> <!--#essa chave
-                está errada por conta dos commits ao github. Sempre que quiser rodar este projeto precisa copiar a chave
-                corre pra não da problema-->
-                <br/>
 
                 {% include 'parciais/_messages.html' %}
                 <input id="envia_comentario" type="submit" class="btn btn-primary" value="Enviar">

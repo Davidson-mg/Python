@@ -130,15 +130,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/' #Essa é a pasta padrão do django para static
-
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),) #definindo minha pasta
-#de arquivos staticos (css, js, fotos e etc) adicionais
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static') #Aqui têm a ver com o comando
-#collectstatic que utilizamos quando vamos postar nosso site no ar. Neste caso
-#quando digitarmos collectstatic ele vai criar uma pasta chamada static com os
-#arquivos
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

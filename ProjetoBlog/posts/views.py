@@ -11,9 +11,8 @@ class PostIndex(ListView): #repare que estamos herdando da classe importada List
     #casse PostIndex. Essa classe já implementa pra gente algumas coisas relacionadas a lista de objetos
     model = Post
     template_name = 'posts/index.html'
-    paginate_by = 3
+    paginate_by = 6
     context_object_name = 'posts'
-
 
     def get_queryset(self):
         qs = super().get_queryset() #estamos pegando da nossa classe pai (ListView) com o super, o metodo get_queryset
@@ -37,12 +36,52 @@ class PostIndex(ListView): #repare que estamos herdando da classe importada List
 
         return qs
 
-
 class PostBusca(PostIndex):
-    pass
+    template_name = 'posts/post_busca.html'
+
+    def get_queryset(self):
+        qs = super().get_queryset()#neste caso, estamos reutilizando e reescrevendo tudo que foi feito na variavel
+        #qs no metodo get_queryset da classe PostIndex, por isso não precisa redigitar tudo como antes.
+
+        termo = self.request.GET.get('termo') #vai retornar o termo (o que foi escrito no campo de busca), caso não
+        # tenha, apenas retorna vazia
+
+        if not termo:
+            return qs
+
+        qs = qs.filter(
+            Q(titulo_post__icontains=termo) | #icontains é case sensitve (não difere letras
+            # maiusculas e minusculas)
+            Q(autor_post__first_name__iexact=termo) | #autor_post é FK, por isso precisa ser iexact.
+            # O iexact também é case sensitive, porém, para FK apenas
+            Q(conteudo_post__icontains=termo) |
+            Q(excerto_post__icontains=termo) |
+            Q(categoria_post__nome_cat__iexact=termo)
+        )
+
+        return qs
 
 class PostCategoria(PostIndex):
-    pass
+    template_name = 'posts/post_categoria.html'
+    def get_queryset(self):
+        qs = super().get_queryset() #neste caso, estamos reutilizando e reescrevendo tudo que foi feito na variavel
+        #qs no metodo get_queryset da classe PostIndex, por isso não precisa redigitar tudo como antes.
+
+        categoria = self.kwargs.get('categoria', None) #Esse kwargs vem das classes anteriores. Se eu desse apenas
+        #um print(self.kwargs) retornari um dicionario { 'categoria': 'nomeDaCategoriaQueCliqueiNaPagia' }.
+        #Estamos dizendo que queremos categoria, se não retornar nada, armazene None.
+
+        if not categoria:
+            return qs
+
+        qs = qs.filter(categoria_post__nome_cat__iexact = categoria) #neste filtro, entre cada __ é uma variavel.
+        #Primeiro, em 'categoria_post' estamos definindo que querendo pesquisar de categoria_post (lembrando que
+        # é uma FK). Em seguinda, em nome_cat estamos informando o campo que queremos utilizar. Em 'iexact' estamos
+        #informando qual o tipo de pesquisa, neste caso uma pesquisa por categoria case sensitive (não difere letras
+        # maiusculas e minusculas). O iexact é case sensitive para FK apenas
+
+        return qs
+
 
 class PostDetalhes(View):
     template_name = 'posts/post_detalhes.html'
@@ -67,7 +106,7 @@ class PostDetalhes(View):
 
             #'post': Post.objects.get(pk = pk), Essa linha faz o mesmo que a linha get_object_or_404 acima da variavel
             # contexto e posteriormente utilizada abaixo em 'post'. Colocamos fora da variavel contexto para poder ser
-            # reutilizada pelos demais elementos, por exemplo em comentarios. A diferença é que com get_object_or_404
+            # reutilizada pelos demais elementos, por exemplo em comentarios. A a diferença é que com get_object_or_404
             # nós acrescentamos o recurso de erro, descartando a nessecidade de um try. Por isso comentamos aqui.
             # O get_object_or_404 é melhor quando se trata de um unico obj
 
@@ -154,8 +193,3 @@ class PostDetalhes(View):
 #         comentario.save()
 #         messages.success(self.request,'Comentário enviado com sucesso.')
 #         return redirect('post_detalhes', pk=post.id) #estamos recarregando a mesma pagina do post atual
-
-class PostDetalhes(UpdateView): #Repare que essa classe é a unica que não herda das classe anteriores, herdando da
-    #classe importada UpdateView
-    pass
-

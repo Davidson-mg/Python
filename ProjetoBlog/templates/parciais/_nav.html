@@ -1,7 +1,7 @@
 <!--_nav.html-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Blog do Davidson</a>
+        <a class="navbar-brand" href="{% url 'index' %}">Blog do Davidson</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,31 +9,20 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-<<<<<<< HEAD
                     <a class="nav-link" href="{% url 'post_categoria' 'vida' %}">Vida</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'post_categoria' 'culinaria' %}">Culinária</a>
-=======
-                    <a class="nav-link" href="index.html">Python</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Django</a>
->>>>>>> parent of 87d38ef (finalizando blog)
+                    <a class="nav-link" href="{% url 'post_categoria' 'tecnologia' %}">Tecnologia</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Tecnologia</a>
-                </li>
-                <li class="nav-item">
-<<<<<<< HEAD
                     <a class="nav-link" href="{% url 'post_categoria' 'games' %}">Games</a>
-=======
-                    <a class="nav-link" href="index.html">Sistemas</a>
->>>>>>> parent of 87d38ef (finalizando blog)
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0 ml-lg-4" action="/busca/">
-                <input name="termo" value="" class="form-control mr-sm-2" type="search" placeholder="Pesquisar"
+            <form class="form-inline my-2 my-lg-0 ml-lg-4" action="{% url 'post_busca' %}">
+                <input name="termo" value="{{ request.GET.termo}}" class="form-control mr-sm-2" type="search" placeholder="Pesquisar"
                        aria-label="Search">
             </form>
         </div>

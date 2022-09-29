@@ -37,7 +37,6 @@ etc ao exibir a variavel 'numero_comentarios'-->
                             colocar a primeira letra de ontem, hoje e amanhã maiusculas-->
                             <small class="text-muted">{{post.data_post|naturalday|title}}
                                 |
-<<<<<<< HEAD
                                 <!--Essa variavel numero_comentarios não existe nos models. Se trata de uma
                                 variavel para contar o numero de comentarios. É como se fizessemos
                                 'post.comentario.set_count'. Essa variavel vem do arquivo views no metodo get_queryset
@@ -45,9 +44,6 @@ etc ao exibir a variavel 'numero_comentarios'-->
                                 {{ post.numero_comentarios|plural_comentarios }} <!-- plural_comentarios é uma variavel
                                  que vem do arquivo dafilters dentro do diretorio templatetags e foi carregada pelo
                                  {% load dafilters %}-->
-=======
-                                {{ post.comentario_set.count }} comentário(s)
->>>>>>> parent of 87d38ef (finalizando blog)
                                 |
                                 {{ post.categoria_post }}</small>
                         </p>

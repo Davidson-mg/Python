@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block titulo %} {{ pedido }}{% endblock %}
+
+{% load dafilters %} <!-- dafilters é um arquivo que criamos manualmente na pasta templatetags. Contem algumas funções
+como por exemplo, função que formata os valores em reais -->
+
+{%load static %}
+
+{% block conteudo %}
+
+
+
+{% include 'parciais/_pedido.html' %}
+
+
+{%endblock%}
