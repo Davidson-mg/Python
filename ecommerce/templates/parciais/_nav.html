@@ -13,9 +13,6 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
 
             {% if request.user.is_authenticated %}
                 <form method="POST" action="{% url 'perfil:login' %}">
@@ -62,7 +59,7 @@
             {%endif%}
 
         </ul>
-        <form class="form-inline my-2 my-lg-0" method="GET" action="{% 'produto.busca'%}">
+        <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'produto:busca' %}">
             <input name="termo" value="{{ request.GET.termo }}" class="form-control mr-sm-2" type="search" placeholder="Busca" aria-label="Busca">
             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Busca</button>
         </form>

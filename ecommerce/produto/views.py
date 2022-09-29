@@ -37,7 +37,7 @@ class Busca(ListaProdutos):
 
         if not termo:
             return qs
-        
+
         self.request.session['termo'] = termo #Sessão recebendo o termo
 
         qs = qs.filter(
