@@ -26,7 +26,7 @@
                     <th scope="row"> {{ pedido }} </th>
                     <td>{{ pedido.total|formata_preco}}</td>
                     <td>{{ pedido.qtd_total }}</td>
-                    <td>{{ pedido.get_stauts_display }}</td>
+                    <td>{{ pedido.get_status_display }}</td>
                     <td>
                         <a href="{% url 'pedido:detalhe' pedido.id %}">
                             Ver <i class="fas fa-search-plus ml-2"></i>

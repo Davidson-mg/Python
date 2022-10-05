@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba5e573d-7231-499b-923d-0444f77c11bc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../ProjetoBlog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjetoBlog/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ecommerce/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../../ecommerce/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ecommerce/perfil/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ecommerce/perfil/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ecommerce/perfil/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ecommerce/perfil/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ecommerce/produto/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ecommerce/produto/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ecommerce/produto/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../ecommerce/produto/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ecommerce/templates/parciais/_nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ecommerce/templates/parciais/_nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DjangonoPythonBasico/como instalar o.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DjangonoPythonBasico/~$mo instalar o.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Fazendo deploy/passo 1 - preparando-ambiente.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Fazendo deploy/passo 1 - preparando-ambiente.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ecommerce/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ecommerce/loja/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/loja/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ecommerce/pedido/templates/pedido/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ecommerce/pedido/templates/pedido/lista.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +24,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -35,15 +35,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/CursoPython/bk/ProjetoBlog",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/CursoPython/ProjetoBlog&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

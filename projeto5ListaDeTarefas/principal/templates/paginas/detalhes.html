@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block conteudo %}
+<div class="container">
+<mai>
+
+    <div class="col-lg">
+
+        <h2>Detalhes da tarefa</h2>
+
+        <dl class="row">
+
+                <dt class="col-lg-2">Nome:</dt>
+                <dd class="col-lg-4">{{ tarefa.nome }}</dd>
+
+        </dl>
+
+    </div>
+
+</mai>
+ </div>
+{%endblock%}

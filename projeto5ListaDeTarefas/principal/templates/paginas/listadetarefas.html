@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block conteudo %}
+<!--Lista-->
+<div class="container">
+    <table class="table table-light">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Tarefa</th>
+            <th scope="col">Data de inclusão</th>
+            <th scope="col">Previsão de conclusão</th>
+            <th scope="col">Observação</th>
+            <th scope="col">Status</th>
+
+        </tr>
+        </thead>
+
+    <form action="{% url 'principal:adicionartarefa' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+        {% include 'parciais/_messages.html' %}
+        <tr>
+<!--            <th></th>-->
+<!--            <th>{{form.nome}}</th>-->
+<!--            <th> <input type="datetime-local" value=""> </th>-->
+<!--            <th> <input type="datetime-local" value=""> </th>-->
+<!--            <th>{{form.status}}</th>-->
+<!--            <th>{{form.observacao}}</th>-->
+            {% for hidden_field in form.hidden_fields%}
+                {{hidden_field}}
+            {%endfor%}
+
+            <th></th>
+            {%for visible_field in form.visible_fields %}
+            <th>{{ visible_field }}</th>
+            {%endfor%}
+            <th></th>
+
+
+
+            <th>
+                <button type="submit" class="btn btn-success">Adicionar</button>
+            </th>
+        </tr>
+
+    </form>
+
+        {%for tarefa in tarefas %}
+        <tbody>
+        <tr>
+            <td>{{ tarefa.id }}</td>
+            <td><a href="{% url 'principal:detalhes' tarefa.id %}">{{ tarefa.nome }}</a></td>
+            <td>{{ tarefa.data_inclusao }}</td>
+            <td>{{ tarefa.previsao_conclusao }}</td>
+            <td>{{ tarefa.observacao }}</td>
+            {%if tarefa.stutus != 'p'%}
+                <td><span class="badge badge-warning">{{ tarefa.get_status_display }}</span></td>
+            {%else%}
+                <td><span class="badge badge-success">{{ tarefa.get_status_display }}</span></td>
+            {%endif%}
+
+            <form action="{% url 'principal:excluir' tarefa.id %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <td>
+                    <button type="submit" class="btn btn-danger">Remover</button>
+                </td>
+            </form>
+
+        </tr>
+        {%endfor%}
+
+        </tbody>
+    </table>
+</div>
+<!--FIM principal-->
+
+{%endblock%}
