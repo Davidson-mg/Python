@@ -1,7 +1,7 @@
-from django.shortcuts import render
+
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views.generic.detail import DetailView, View
-from django.views.generic import ListView
+from django.views.generic import ListView, UpdateView
 from .models import Tarefa, FormLista
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -63,9 +63,35 @@ def excluir(request, tarefa_id):
 
 
 
-class Detalhes(DispatchLoginRequiredMixin, ListView):
+class Detalhes(DispatchLoginRequiredMixin, DetailView):
+
     model = Tarefa
-    context_object_name = 'tarefas'
+    context_object_name = 'tarefa'
     template_name = 'paginas/detalhes.html'
-    pk_url_kwarg = 'pk'
+    pk_url_kwarg = 'id'
+
+
+
+class EditarTarefa (DispatchLoginRequiredMixin, UpdateView):
+
+    model = Tarefa
+    template_name = 'paginas/editar.html'
+    fields = ['id', 'nome', 'previsao_conclusao', 'observacao', 'status', 'descricao']
+    pk_url_kwarg = 'id'
+    success_url = '/listadetarefas'
+
+    def post(self, *args, **kwargs):
+        messages.success(self.request, 'Tarefa atualizada com sucesso.')
+        return super().post(self.request, *args, **kwargs)
+
+
+
+
+
+
+
+
+
+
+
 

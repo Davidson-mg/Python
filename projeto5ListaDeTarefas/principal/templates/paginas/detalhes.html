@@ -3,21 +3,47 @@
 
 {% block conteudo %}
 <div class="container">
-<mai>
 
-    <div class="col-lg">
+    <div class="col-xl-8">
 
-        <h2>Detalhes da tarefa</h2>
+        <main class="form-group">
 
-        <dl class="row">
+            <div class="col-lg">
 
-                <dt class="col-lg-2">Nome:</dt>
-                <dd class="col-lg-4">{{ tarefa.nome }}</dd>
+                <h2>Detalhes da tarefa</h2>
 
-        </dl>
+                <dl class="row">
 
+                    <dt class="col-lg-2">Tarefa:</dt>
+                    <dd class="col-lg-4">{{ tarefa.nome }}</dd>
+                    <dt class="col-lg-2">Descrição:</dt>
+                    <dd class="col-lg-4">{{ tarefa.observacao }}</dd>
+                    <dt class="col-lg-2">Data de inclusão:</dt>
+                    <dd class="col-lg-4">{{ tarefa.data_inclusao }}</dd>
+                    <dt class="col-lg-2">Conclusão:</dt>
+                    <dd class="col-lg-4">{{ tarefa.previsao_conclusao }}</dd>
+                    <dt class="col-lg-2">Status:</dt>
+
+                    {%if tarefa.status == 'p'%}
+                    <dd><span class="badge badge-warning">{{ tarefa.get_status_display }}</span></dd>
+                    {%else%}
+                    <dd><span class="badge badge-info">{{ tarefa.get_status_display }}</span></dd>
+                    {%endif%}
+
+                </dl>
+                <h4>Descriação:</h4>
+                <p>{{ tarefa.descricao}}</p>
+
+
+                <a type="button" class="btn btn-primary" data-toggle="modal"
+                   href="{% url 'principal:editar' tarefa.id %}">
+                    Editar
+                </a>
+
+            </div>
+
+        </main>
     </div>
+</div>
 
-</mai>
- </div>
 {%endblock%}

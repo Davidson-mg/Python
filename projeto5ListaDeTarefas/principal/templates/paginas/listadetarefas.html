@@ -56,11 +56,11 @@
             <td>{{ tarefa.data_inclusao }}</td>
             <td>{{ tarefa.previsao_conclusao }}</td>
             <td>{{ tarefa.observacao }}</td>
-            {%if tarefa.stutus != 'p'%}
+            {%if tarefa.status == 'p'%}
                 <td><span class="badge badge-warning">{{ tarefa.get_status_display }}</span></td>
-            {%else%}
-                <td><span class="badge badge-success">{{ tarefa.get_status_display }}</span></td>
-            {%endif%}
+            {% else %}
+                <td><span class="badge badge-info">{{ tarefa.get_status_display }}</span></td>
+            {% endif %}
 
             <form action="{% url 'principal:excluir' tarefa.id %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
