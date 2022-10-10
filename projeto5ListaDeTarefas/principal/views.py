@@ -3,35 +3,49 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views.generic.detail import DetailView, View
 from django.views.generic import ListView, UpdateView
 from .models import Tarefa, FormLista
+from accounts.views import urls
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
+from django.contrib.auth import authenticate
+from accounts import urls
 
+from django.contrib.auth.decorators import login_required
+
+
+
+
+
+
+class Index(ListView):
+
+    model = Tarefa
+    context_object_name = 'index'
+    template_name = 'paginas/index.html'
 
 
 class DispatchLoginRequiredMixin(View):
     def dispatch(self, *args, **kwargs):
         if not self.request.user.is_authenticated:
-            return redirect('principal:listadetarefas')
+            return redirect('accounts:login')
+
         return super().dispatch(*args, **kwargs)
 
 
 
-def index(request):
-    return render(request, 'paginas/index.html')
 
-
-
-class ListaDeTarefas(ListView):
+class ListaDeTarefas(DispatchLoginRequiredMixin, ListView):
 
     def get(self, *args, **kwargs):
+
         form = FormLista
         tarefas = Tarefa.objects.all()
         self.model = Tarefa
         self.template_name = 'paginas/listadetarefas.html'
 
         return render(self.request, self.template_name, {'form': form, 'tarefas': tarefas})
+
 
 
 def adicionarTarefa(request):
@@ -75,7 +89,7 @@ class Detalhes(DispatchLoginRequiredMixin, DetailView):
 class EditarTarefa (DispatchLoginRequiredMixin, UpdateView):
 
     model = Tarefa
-    template_name = 'paginas/editar.html'
+    template_name = 'paginas/detalhes.html'
     fields = ['id', 'nome', 'previsao_conclusao', 'observacao', 'status', 'descricao']
     pk_url_kwarg = 'id'
     success_url = '/listadetarefas'
@@ -83,6 +97,7 @@ class EditarTarefa (DispatchLoginRequiredMixin, UpdateView):
     def post(self, *args, **kwargs):
         messages.success(self.request, 'Tarefa atualizada com sucesso.')
         return super().post(self.request, *args, **kwargs)
+
 
 
 

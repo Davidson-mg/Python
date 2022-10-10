@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block extra_js%}
-    <script src=" http://malsup.github.com/jquery.form.js"></script>
+<script src=" http://malsup.github.com/jquery.form.js"></script>
 {% endblock %}
 
 {% block conteudo %}
@@ -13,9 +13,7 @@
     <div class="col-xl-8">
 
 
-
         <main class="form-group">
-
 
 
             <div class="col-lg">
@@ -47,16 +45,7 @@
 
                 <a type="button" class="btn btn-primary" href="{% url 'principal:editar' tarefa.id %}"> Editar </a>
 
-
-
-
-
-
-
-
-<!--            Modal grande -->
-<!--                <button  type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Modal grande</button>-->
-                <a  type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" href="{% url 'principal:editar' tarefa.id %}">Modal grande</a>
+                <!--Modal grande -->
 
                 <div id="addEmployeeForm" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
                      aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -106,24 +95,11 @@
                                 </div>
 
 
-
-
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--Fim do modal-->
-
-
-
-
-
-
-
-
-
-
-
+                <!--endblock-->
 
 
             </div>
@@ -131,5 +107,6 @@
         </main>
     </div>
 </div>
+
 
 {%endblock%}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block conteudo %}
+
+<br>
+<div class="container">
+    <form method="POST" action="{% url 'accounts:login' %}">
+        {% include 'parciais/_messages.html' %}
+        {% csrf_token %}
+
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card text-center card  bg-default mb-3">
+                    <div class="card-header">
+                        LOGIN
+                    </div>
+                    <div class="card-body">
+                        <input name="username" type="text" id="userName" class="form-control input-sm chat-input"
+                               placeholder="Usuário"/>
+                        </br>
+                        <input name="password" type="password" id="userPassword"
+                               class="form-control input-sm chat-input"
+                               placeholder="Senha"/>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <button type="submit" class="btn btn-success">Login</button>
+                    </div>
+                    <a href="{%url 'accounts:cadastro' %}">Cadastrar-me</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{%endblock%}
