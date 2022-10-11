@@ -1,7 +1,52 @@
 {% extends 'base.html' %}
 
-{% block conteudo %}
+{% block conteudo%}
 
-cadastro
+<form method="POST" action="#">
+
+    {% csrf_token %}
+    <br>
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+                {%include 'parciais/_messages.html' %}
+
+            <div class="card text-center card  bg-default mb-3">
+                <div class="card-header">
+                    <b>CADASTRO</b>
+                </div>
+
+                <div class="card-body">
+
+                    <label>Nome</label>
+                    <input type="text" name="nome" value="{{request.POST.nome}}" class="form-control input-sm chat-input"
+                           placeholder="Nome"/>
+                    </br>
+                    <label>Sobrenome</label>
+                    <input type="text" name="sobrenome" value="{{request.POST.sobrenome}}" class="form-control input-sm chat-input"
+                           placeholder="Sobrenome"/>
+                    </br>
+                    <label>Usuário</label>
+                    <input type="text" name="usuario" value="{{request.POST.usuario}}" class="form-control input-sm chat-input"
+                           placeholder="Usuário"/>
+                    </br>
+                    <label>E-mail</label>
+                    <input type="text" name="email" value="{{request.POST.email}}" class="form-control input-sm chat-input"
+                           placeholder="E-mail"/>
+                    </br>
+                    <label>Senha</label>
+                    <input type="password" name="senha1" value="{{request.POST.senha1}}" class="form-control input-sm chat-input"
+                           placeholder="Senha"/>
+                    </br>
+                    <label>Repetir Senha</label>
+                    <input type="password" name="senha2" value="{{request.POST.senha2}}" class="form-control input-sm chat-input"
+                           placeholder="Repetir Senha"/>
+                </div>
+                <div class="card-footer text-muted">
+                    <button id="idConfirmar" name="idConfirmar" class="btn btn-primary" type="submit">confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
 
 {%endblock%}

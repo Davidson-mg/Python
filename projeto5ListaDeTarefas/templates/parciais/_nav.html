@@ -33,6 +33,9 @@
                             <a class="dropdown-item" href="{% url 'accounts:logout' %}"> Sair </a>
                         </div>
                     </li>
+
+                    <h5 style="color: white; margin-left:600px;" class=" form-inline font-weight-light my-2 my-lg-0">Olá, {{user.username}}!</h5>
+
                 {%else%}
 
                     <li class="nav-item dropdown">
@@ -53,10 +56,10 @@
             </ul>
 
 
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+<!--            <form class="form-inline my-2 my-lg-0">-->
+<!--                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--            </form>-->
 
 
 

@@ -41,11 +41,11 @@ class ListaDeTarefas(DispatchLoginRequiredMixin, ListView):
 
         form = FormLista
         tarefas = Tarefa.objects.all()
+        # tarefas = {'tarefas': self.request.session.get(ta,{})}
         self.model = Tarefa
         self.template_name = 'paginas/listadetarefas.html'
 
         return render(self.request, self.template_name, {'form': form, 'tarefas': tarefas})
-
 
 
 def adicionarTarefa(request):
@@ -89,7 +89,7 @@ class Detalhes(DispatchLoginRequiredMixin, DetailView):
 class EditarTarefa (DispatchLoginRequiredMixin, UpdateView):
 
     model = Tarefa
-    template_name = 'paginas/detalhes.html'
+    template_name = 'paginas/editar.html'
     fields = ['id', 'nome', 'previsao_conclusao', 'observacao', 'status', 'descricao']
     pk_url_kwarg = 'id'
     success_url = '/listadetarefas'
