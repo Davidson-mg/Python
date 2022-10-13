@@ -1,5 +1,6 @@
 {% load static %}
 <!--Footer-->
+
 <div class="container">
 
     <div class="footer-dark">
@@ -7,16 +8,77 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col item social"><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i
-                            class="icon ion-social-instagram"></i></a></div>
+                    <div class="container social">
+
+                        <a class="social-icon" href="https://www.linkedin.com/in/davidson-marcos-844032117/">
+                            <ion-icon name="logo-linkedin" size="large"></ion-icon>
+                        </a>
+
+
+                        <a class="social-icon" href="https://www.instagram.com/davidson91_mg/">
+                            <ion-icon name="logo-instagram" size="large"></ion-icon>
+                        </a>
+
+                        <p class="copyright">By Davidson © 2022</p>
                 </div>
-                <p class="copyright">By Davidson © 2022</p>
             </div>
+                <div  id="footer" class="container">
+                    <p class="text-md-right copyright">Powered by Django</p>
+                </div>
         </footer>
     </div>
 
 </div>
 <!--Fim Footer-->
+
+<style>
+
+#footer {
+
+}
+#footer p{
+    font-size: 15px
+}
+
+.social-icon {
+    color: white;
+    transition: color 0.5s;
+
+}
+.social-icon:hover {
+    color: #aaaaaa;
+}
+.social {
+    text-align:center;
+}
+
+.btn-excluir {
+    background-color: Transparent;
+    border: none;
+    outline:none;
+    color: #aaaaaa;
+    transition: color 0.5s;
+    margin: center:
+
+}
+.btn-excluir:hover {
+    color: red;
+}
+
+.btn-editar {
+
+    color: #aaaaaa;
+    transition: color 0.5s;
+    text-align: center;
+}
+.btn-editar:hover {
+    color: blue;
+}
+
+
+
+
+</style>
 
 <script src="{% static 'bootstrap/js/jquery-3.2.1.slim.min.js' %}"></script>
 <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>

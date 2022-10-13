@@ -5,12 +5,14 @@
 
 
 {% block conteudo %}
+
 <!--Lista-->
 <div class="container">
+
     <table class="table table-light">
         <thead>
         <tr>
-            <th scope="col">ID</th>
+            <th scope="col">Cod</th>
             <th scope="col">Tarefa</th>
             <th scope="col">Data de inclusão</th>
             <th scope="col">Previsão de conclusão</th>
@@ -53,7 +55,7 @@
         {%for tarefa in tarefas %}
         <tbody>
         <tr>
-            <td>{{ tarefa.id }}</td>
+            <td>{{ tarefa.codigo }}</td>
             <td><a href="{% url 'principal:detalhes' tarefa.id %}">{{ tarefa.nome }}</a></td>
             <td>{{ tarefa.data_inclusao }}</td>
             <td>{{ tarefa.previsao_conclusao }}</td>
@@ -67,8 +69,21 @@
             <form action="{% url 'principal:excluir' tarefa.id %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <td>
-                    <button type="submit" class="btn btn-danger">Remover</button>
+
+
+                    <div class="social">
+
+                        <button class="btn-excluir" whidth="margin: 10px" type="submit">
+                            <ion-icon name="trash" size="large"></ion-icon>
+                        </button>
+
+                        <a class="btn-editar" href="{% url 'principal:editar' tarefa.id %}">
+                            <ion-icon name="create" size="large"></ion-icon>
+                        </a>
+
+                    </div>
                 </td>
+
             </form>
 
         </tr>
@@ -76,7 +91,10 @@
 
         </tbody>
     </table>
+
 </div>
 <!--FIM principal-->
+
+
 
 {%endblock%}

@@ -18,9 +18,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'principal:listadetarefas' %}">Lista de tarefas</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contato.html">Contato <span class="sr-only">(current)</span></a>
-                </li>
 
 
                 {% if request.user.is_authenticated %}
@@ -34,7 +31,7 @@
                         </div>
                     </li>
 
-                    <h5 style="color: white; margin-left:600px;" class=" form-inline font-weight-light my-2 my-lg-0">Olá, {{user.username}}!</h5>
+                    <h5 style="color: white; margin-left:680px;" class=" form-inline font-weight-light my-2 my-lg-0">Olá, {{user.username}}!</h5>
 
                 {%else%}
 

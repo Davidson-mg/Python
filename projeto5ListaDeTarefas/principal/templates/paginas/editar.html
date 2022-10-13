@@ -6,44 +6,49 @@
 <div class="container">
 
 
+
         <div class="col-xl-8">
+
             <h2 class="my-3">Editar Tarefa</h2>
+
+            {%include 'parciais/_messages.html' %}
 
             <form method="POST">
 
-                  <div class="form-group">
-                {% csrf_token %}
-                {% for hidden_field in form.hidden_fields %} <!-- Esse hidden_fileds será uma lista vazia e é
-                     uma variavel do form mesmo-->
-                {{ hidden_field }}
-                {%endfor%}
-
-                {% for visible_field in form.visible_fields %} <!-- Esse hidden_fileds será uma lista vazia -->
-
-                <!--Nessa forma de exibir os campos do form, precisa dessa variavel para mostrar os erros. Coloquei
-                 comentado pois vamos tulizar o plugin crispy para estilizar o formulario -->
-                <!--
                 <div class="form-group">
-                    {{visible_field.label_tag}} <br>
-                    {{ visible_field }}
-                    {{ visible_field.errors}}
-                </div>
-                -->
+                    {% csrf_token %}
+                    {% for hidden_field in form.hidden_fields %} <!-- Esse hidden_fileds será uma lista vazia e é
+                     uma variavel do form mesmo-->
+                    {{ hidden_field }}
+                    {%endfor%}
 
-                {{ visible_field|as_crispy_field }} <!--substituindo o trecho comentado acima pois será aplicado
+                    {% for visible_field in form.visible_fields %} <!-- Esse hidden_fileds será uma lista vazia -->
+
+                    <!--Nessa forma de exibir os campos do form, precisa dessa variavel para mostrar os erros. Coloquei
+                     comentado pois vamos tulizar o plugin crispy para estilizar o formulario -->
+                    <!--
+                    <div class="form-group">
+                        {{visible_field.label_tag}} <br>
+                        {{ visible_field }}
+                        {{ visible_field.errors}}
+                    </div>
+                    -->
+
+                    {{ visible_field|as_crispy_field }} <!--substituindo o trecho comentado acima pois será aplicado
                         o plug crispy para estilizar o formulario-->
 
 
-                {%endfor%}
+                    {%endfor%}
 
-                <th>
-                    <button type="submit" class="btn btn-success">Salvar</button>
-                </th>
-                              </div>
+                    <th>
+                        <button type="submit" class="btn btn-success">Salvar</button>
+                    </th>
+                </div>
 
             </form>
 
         </div>
+
 
 </div>
 
