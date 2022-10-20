@@ -6,8 +6,6 @@ from .models import Tarefa, FormLista
 from django.contrib import messages
 
 
-
-
 class Index(ListView):
 
     model = Tarefa
@@ -29,7 +27,6 @@ class DispatchLoginRequiredMixin(View):
 class ListaDeTarefas(DispatchLoginRequiredMixin, ListView):
 
     def get(self, *args, **kwargs):
-
         Tarefa.usuario.primary_key = self.request.user.is_authenticated
         form = FormLista()
         tarefas = Tarefa.objects.filter(usuario=self.request.user)
@@ -38,8 +35,6 @@ class ListaDeTarefas(DispatchLoginRequiredMixin, ListView):
         self.template_name = 'paginas/listadetarefas.html'
 
         return render(self.request, self.template_name, {'form': form, 'tarefas': tarefas})
-
-
 
 
 def adicionarTarefa(request):
@@ -95,7 +90,7 @@ class EditarTarefa (DispatchLoginRequiredMixin, UpdateView):
 
     model = Tarefa
     template_name = 'paginas/editar.html'
-    fields = [ 'nome', 'previsao_conclusao', 'observacao', 'status', 'descricao']
+    fields = ['nome', 'previsao_conclusao', 'observacao', 'status', 'descricao']
     exclude = ('codigo',)
     pk_url_kwarg = 'id'
 

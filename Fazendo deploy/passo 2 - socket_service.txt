@@ -41,6 +41,8 @@ ExecStart=/home/davidson/projetoAgenda/venv/bin/gunicorn \
 [Install]
 WantedBy=multi-user.target
 ##################################################
+OBS: no arquivo acim,a na ultima linha (projetoAgenda.wsgi:application) vc coloca o nome da pasta que corresponde ao app principal do site e não a pasta do projeto como um todo
+
 
 # Ativando
 sudo systemctl start gunicorn.socket

@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b683282e-6ddf-4fe9-85e4-403dbdb4c5a8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Fazendo deploy/passo 1 - preparando-ambiente.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Fazendo deploy/passo 1 - preparando-ambiente.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Fazendo deploy/passo 2 - socket_service.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Fazendo deploy/passo 2 - socket_service.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ProjetoBlog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ProjetoBlog/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../~$eparando ambiente no VScode.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../~WRL0003.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProjetoBlog/posts/templates/posts/post_detalhes.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ProjetoBlog/posts/templates/posts/post_detalhes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto5ListaDeTarefas/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto5ListaDeTarefas/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto5ListaDeTarefas/principal/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto5ListaDeTarefas/principal/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto5ListaDeTarefas/principal/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto5ListaDeTarefas/principal/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto5ListaDeTarefas/templates/parciais/_nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto5ListaDeTarefas/templates/parciais/_nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../python intermediario (programação Procedural)/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/../python intermediario (programação Procedural)/teste.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +32,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "C:/CursoPython/python basico (logica de programação)"
   }
 }]]></component>
